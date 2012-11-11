@@ -14,8 +14,11 @@ Compilation
 ================
 Vous devez ensuite vous placer dans le dossier des sources. Pour compiler, il faut que vous ayez sfml 1.6 d'installée.
 Ouvrez le Makefile avec votre editeur de texte préféré et modifiez les deux lignes suivantes en fonction de votre système :
+
 CXXFLAGS=-I/path/vers/includes/de/sfml
+
 LDFLAGS=-lnom_sfml1.6-{audio,graphics,system,window,network}
+
 Ensuite tapez 'make'. Normalement, vous devriez avoir un programme astropong. Si non, vous avez du vous tromper lors de la modification des deux lignes précédentes.
 
 Les ressources
