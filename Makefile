@@ -1,5 +1,6 @@
 OBJS=stdafx.o trait.o musique.o joueur.o terrain.o bonus.o balle.o menu.o partieSolo.o partie.o main.o config.o
-CXXFLAGS=-DRCDIR=\"res/\"
+RCDIR=res/
+CXXFLAGS=-DRCDIR=\"$(RCDIR)\"
 # Les deux lignes suivantes à adapter à votre système
 CXXFLAGS+= -I/usr/include/sfml1.6/
 LDFLAGS=-lsfml1.6-{audio,graphics,system,window,network}
