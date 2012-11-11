@@ -1,0 +1,8 @@
+Nous parlerons ici de l'installation sous Linux. Pour l'installer sous windows, il faudra aller voir http://www.siteduzero.com/forum-83-785145-p1-jeu-video-astropong.html.
+
+Vous devez tout d'abord télécharger l'archive. Si vous utilisez git, vous pouvez faire :
+git clone git://github.com/lucas8/astropong.git
+Sinon, vous devez faire :
+wget https://github.com/lucas8/astropong/archive/master.zip
+unzip master.zip
+
