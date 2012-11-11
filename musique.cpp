@@ -11,21 +11,21 @@ Musique::Musique()
 { 
 	// Ici on ajoute les morceaux 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[0]->OpenFromFile("transit.ogg"))
+	if (!m_listeMusique[0]->OpenFromFile("res/sounds/transit.ogg"))
 	{
-		cout << " transit.ogg introuvable" << endl;
+		cout << " res/sounds/transit.ogg introuvable" << endl;
 	}
 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[1]->OpenFromFile("galaxy.ogg"))
+	if (!m_listeMusique[1]->OpenFromFile("res/sounds/galaxy.ogg"))
 	{
-		cout << " galaxy.ogg introuvable" << endl;
+		cout << " res/sounds/galaxy.ogg introuvable" << endl;
 	}
 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[2]->OpenFromFile("sparkling.ogg"))
+	if (!m_listeMusique[2]->OpenFromFile("res/sounds/sparkling.ogg"))
 	{
-		cout << " sparkling.ogg introuvable" << endl;
+		cout << " res/sounds/sparkling.ogg introuvable" << endl;
 	}
 
 	m_nbMusiques = m_listeMusique.size();
