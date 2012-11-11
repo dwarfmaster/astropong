@@ -10,6 +10,7 @@
 #include "terrain.h"
 #include "musique.h"
 #include "partie.h"
+#include "config.h"
 
 
 #define PI 3.14159265358979323846264338327950288419716939937510582
@@ -44,9 +45,9 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 	m_compteurEclair = 0;
 
 	Image imgAP;
-	if (!imgAP.LoadFromFile("res/imgs/Nebula.jpg"))
+	if (!imgAP.LoadFromFile(getPath("imgs/Nebula.jpg")))
 	{
-		cout << "res/imgs/Nebula introuvable" << endl;
+		cout << "rcdir/imgs/Nebula introuvable" << endl;
 		return; // On ferme le programme
 	}
 
@@ -60,9 +61,9 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 
 	// Chargement image balle
 	Image imgBalle;
-	if (!imgBalle.LoadFromFile("res/imgs/Balle.bmp"))
+	if (!imgBalle.LoadFromFile(getPath("imgs/Balle.bmp")))
 	{
-		cout << "res/imgs/Balle.bmp introuvable" << endl;
+		cout << "rcdir/imgs/Balle.bmp introuvable" << endl;
 		return; // On ferme le programme
 	}
 	imgBalle.CreateMaskFromColor(Color(0, 0, 255));
@@ -72,9 +73,9 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 	sprBalle.SetCenter(7,7); // Centre de la balle
 
 	Image imgTrou;
-	if (!imgTrou.LoadFromFile("res/imgs/Trou.bmp"))
+	if (!imgTrou.LoadFromFile(getPath("imgs/Trou.bmp")))
 	{
-		cout << "res/imgs/Trou.bmp introuvable" << endl;
+		cout << "rcdir/imgs/Trou.bmp introuvable" << endl;
 		return; // On ferme le programme
 	}
 	imgTrou.CreateMaskFromColor(Color(0, 0, 255));
@@ -95,9 +96,9 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 	// Dessin trait pour perdant
 
 
-	if (!m_imgEclair.LoadFromFile("res/imgs/imageEclair.png"))
+	if (!m_imgEclair.LoadFromFile(getPath("imgs/imageEclair.png")))
 	{
-		cout << "res/imgs/imageEclair.png introuvable" << endl;
+		cout << "rcdir/imgs/imageEclair.png introuvable" << endl;
 		return; // On ferme le programme
 	}
 	m_imgEclair.CreateMaskFromColor(Color(255, 255, 255));
@@ -114,7 +115,7 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 
 
 
-	if(!m_font.LoadFromFile("res/ttf/LinLibertine_R.ttf",80))
+	if(!m_font.LoadFromFile(getPath("ttf/LinLibertine_R.ttf"),80))
 {
     cout << "police introuvable" << endl;
 	return;
@@ -171,27 +172,27 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 	Listener::SetTarget(0,0,-1);
 
 	SoundBuffer rebond;
-	if (!rebond.LoadFromFile("res/sounds/rebond.ogg"))
+	if (!rebond.LoadFromFile(getPath("sounds/rebond.ogg")))
 	{
-		cout << "res/sounds/rebond.ogg introuvable" << endl;
+		cout << "rcdir/sounds/rebond.ogg introuvable" << endl;
 	}
 	m_sonRebond.SetBuffer(rebond);
 	m_sonRebond.SetAttenuation(0);
 	m_sonRebond.SetVolume(70);
 
 	SoundBuffer rebondRaquette;
-	if (!rebondRaquette.LoadFromFile("res/sounds/rebondRaquette.ogg"))
+	if (!rebondRaquette.LoadFromFile(getPath("sounds/rebondRaquette.ogg")))
 	{
-		cout << "res/sounds/rebondRaquette.ogg introuvable" << endl;
+		cout << "rcdir/sounds/rebondRaquette.ogg introuvable" << endl;
 	}
 	m_sonRebondRaquette.SetBuffer(rebondRaquette);
 	m_sonRebondRaquette.SetAttenuation(0);
 	m_sonRebondRaquette.SetVolume(50);
 
 	SoundBuffer eclair;
-	if (!eclair.LoadFromFile("res/sounds/eclair.ogg"))
+	if (!eclair.LoadFromFile(getPath("sounds/eclair.ogg")))
 	{
-		cout << "res/sounds/eclair.ogg introuvable" << endl;
+		cout << "rcdir/sounds/eclair.ogg introuvable" << endl;
 	}
 	m_sonEclair.SetBuffer(eclair);
 	m_sonEclair.SetAttenuation(0);
@@ -199,46 +200,46 @@ Partie::Partie(RenderWindow &app, int nbJoueurs, int nPoints, bool iaPresente)
 
 
 // -------------- NECESSAIRE POUR BONUS ! ----------------------------------
-		if (!m_imgBonus.LoadFromFile("res/imgs/bonus.png"))
+		if (!m_imgBonus.LoadFromFile(getPath("imgs/bonus.png")))
 		{
-			cout << "res/imgs/bonus.png introuvable" << endl;
+			cout << "rcdir/imgs/bonus.png introuvable" << endl;
 			exit(2); // On ferme le programme
 		}
 		m_imgBonus.CreateMaskFromColor(Color(0, 0, 0));
 	
-	if (!m_imgVortex.LoadFromFile("res/imgs/vortex.png"))
+	if (!m_imgVortex.LoadFromFile(getPath("imgs/vortex.png")))
 		{
-			cout << "res/imgs/vortex.png introuvable" << endl;
+			cout << "rcdir/imgs/vortex.png introuvable" << endl;
 			exit(2); // On ferme le programme
 		}
-	if (!m_imgVortex2.LoadFromFile("res/imgs/vortex2.png"))
+	if (!m_imgVortex2.LoadFromFile(getPath("imgs/vortex2.png")))
 		{
-			cout << "res/imgs/vortex2.png introuvable" << endl;
+			cout << "rcdir/imgs/vortex2.png introuvable" << endl;
 			exit(2); // On ferme le programme
 		}
-	if (!m_imgVortex2J.LoadFromFile("res/imgs/vortex2J.png"))
+	if (!m_imgVortex2J.LoadFromFile(getPath("imgs/vortex2J.png")))
 		{
-			cout << "res/imgs/vortex2J.png introuvable" << endl;
+			cout << "rcdir/imgs/vortex2J.png introuvable" << endl;
 			exit(2); // On ferme le programme
 		}
 
-	if (!m_bufferBonus.LoadFromFile("res/sounds/bonus.ogg"))
+	if (!m_bufferBonus.LoadFromFile(getPath("sounds/bonus.ogg")))
 	{
-		cout << "res/sounds/bonus.ogg introuvable" << endl;
+		cout << "rcdir/sounds/bonus.ogg introuvable" << endl;
 	}
 
-	if (!m_bufferCasse.LoadFromFile("res/sounds/casse.ogg"))
+	if (!m_bufferCasse.LoadFromFile(getPath("sounds/casse.ogg")))
 	{
-		cout << "res/sounds/casse.ogg introuvable" << endl;
+		cout << "rcdir/sounds/casse.ogg introuvable" << endl;
 	}
 
-	if (!m_bufferVortex.LoadFromFile("res/sounds/vortex.ogg"))
+	if (!m_bufferVortex.LoadFromFile(getPath("sounds/vortex.ogg")))
 	{
-		cout << "res/sounds/vortex.ogg introuvable" << endl;
+		cout << "rcdir/sounds/vortex.ogg introuvable" << endl;
 	}
-	if (!m_bufferVortex2.LoadFromFile("res/sounds/vortex2.ogg"))
+	if (!m_bufferVortex2.LoadFromFile(getPath("sounds/vortex2.ogg")))
 	{
-		cout << "res/sounds/vortex2.ogg introuvable" << endl;
+		cout << "rcdir/sounds/vortex2.ogg introuvable" << endl;
 	}
 //---------------------------------------------------------
 

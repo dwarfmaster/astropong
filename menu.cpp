@@ -6,6 +6,7 @@
 #include <complex>
 #include "menu.h"
 #include "partie.h"
+#include "config.h"
 
 using namespace std;
 using namespace sf;
@@ -32,16 +33,16 @@ Menu::Menu(RenderWindow &app)
 
 	m_numMenu = 0;
 	Image imgAP;
-	if (!imgAP.LoadFromFile("res/imgs/etoiles.jpg") && !imgAP.LoadFromFile("etoiles"))
+	if (!imgAP.LoadFromFile(getPath("imgs/etoiles.jpg")) && !imgAP.LoadFromFile("etoiles"))
 	{
-		cout << "res/imgs/etoiles.jpg introuvable" << endl;
+		cout << "rcdir/imgs/etoiles.jpg introuvable" << endl;
 		return; // On ferme le programme
 	}
 
 	Image imgTitre;
-	if (!imgTitre.LoadFromFile("res/imgs/titre.png"))
+	if (!imgTitre.LoadFromFile(getPath("imgs/titre.png")))
 	{
-		cout << "res/imgs/titre.png introuvable" << endl;
+		cout << "rcdir/imgs/titre.png introuvable" << endl;
 		return; // On ferme le programme
 	}
 	imgTitre.CreateMaskFromColor(Color(0, 0, 0));
@@ -49,16 +50,16 @@ Menu::Menu(RenderWindow &app)
 	m_sprTitre.SetCenter(m_sprTitre.GetSize().x / 2, m_sprTitre.GetSize().y / 2);
 
 	Image imgSprites;
-	if (!imgSprites.LoadFromFile("res/imgs/imageMenu.png"))
+	if (!imgSprites.LoadFromFile(getPath("imgs/imageMenu.png")))
 	{
-		cout << "res/imgs/imageMenu.png introuvable" << endl;
+		cout << "rcdir/imgs/imageMenu.png introuvable" << endl;
 		return; // On ferme le programme
 	}
 
 	Image imgSprites2;
-	if (!imgSprites2.LoadFromFile("res/imgs/imageMenu2.png"))
+	if (!imgSprites2.LoadFromFile(getPath("imgs/imageMenu2.png")))
 	{
-		cout << "res/imgs/imageMenu2.png introuvable" << endl;
+		cout << "rcdir/imgs/imageMenu2.png introuvable" << endl;
 		return; // On ferme le programme
 	}
 
@@ -125,9 +126,9 @@ Menu::Menu(RenderWindow &app)
 
 	// Chargement image balle
 	Image imgBalle;
-	if (!imgBalle.LoadFromFile("res/imgs/Balle.bmp"))
+	if (!imgBalle.LoadFromFile(getPath("imgs/Balle.bmp")))
 	{
-		cout << "res/imgs/Balle.bmp introuvable" << endl;
+		cout << "rcdir/imgs/Balle.bmp introuvable" << endl;
 		return; // On ferme le programme
 	}
 	imgBalle.CreateMaskFromColor(Color(0, 0, 255));
@@ -137,16 +138,16 @@ Menu::Menu(RenderWindow &app)
 	sprBalle.SetCenter(7,7); // Centre de la balle
 
 
-	if(!m_font.LoadFromFile("res/ttf/LinLibertine_R.ttf",80))
+	if(!m_font.LoadFromFile(getPath("ttf/LinLibertine_R.ttf"),80))
 	{
 		cout << "police introuvable" << endl;
 		return;
 	}
 
 
-	if (!m_musiqueMenu.OpenFromFile("res/sounds/zen.ogg") && !m_musiqueMenu.OpenFromFile("zen"))
+	if (!m_musiqueMenu.OpenFromFile(getPath("sounds/zen.ogg")) && !m_musiqueMenu.OpenFromFile("zen"))
 	{
-		cout << "res/sounds/zen.ogg introuvable" << endl;
+		cout << "rcdir/sounds/zen.ogg introuvable" << endl;
 	}
 	m_musiqueMenu.SetLoop(true);
 	m_musiqueMenu.Play();

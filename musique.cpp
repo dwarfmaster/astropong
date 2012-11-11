@@ -2,6 +2,7 @@
 #include <SFML/Audio.hpp> 
 #include <iostream>
 #include "musique.h"
+#include "config.h"
 
 using namespace std;
 using namespace sf;
@@ -11,21 +12,21 @@ Musique::Musique()
 { 
 	// Ici on ajoute les morceaux 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[0]->OpenFromFile("res/sounds/transit.ogg"))
+	if (!m_listeMusique[0]->OpenFromFile(getPath("sounds/transit.ogg")))
 	{
-		cout << " res/sounds/transit.ogg introuvable" << endl;
+		cout << " rcdir/sounds/transit.ogg introuvable" << endl;
 	}
 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[1]->OpenFromFile("res/sounds/galaxy.ogg"))
+	if (!m_listeMusique[1]->OpenFromFile(getPath("sounds/galaxy.ogg")))
 	{
-		cout << " res/sounds/galaxy.ogg introuvable" << endl;
+		cout << " rcdir/sounds/galaxy.ogg introuvable" << endl;
 	}
 
 	m_listeMusique.push_back(new Music());
-	if (!m_listeMusique[2]->OpenFromFile("res/sounds/sparkling.ogg"))
+	if (!m_listeMusique[2]->OpenFromFile(getPath("sounds/sparkling.ogg")))
 	{
-		cout << " res/sounds/sparkling.ogg introuvable" << endl;
+		cout << " rcdir/sounds/sparkling.ogg introuvable" << endl;
 	}
 
 	m_nbMusiques = m_listeMusique.size();
