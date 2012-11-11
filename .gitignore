@@ -1,0 +1,13 @@
+# Compiled objects
+astropong
+*.o
+
+# Rcs
+*.ttf
+*.png
+*.bmp
+*.jpg
+*.ico
+*.ogg
+*.wav
+
