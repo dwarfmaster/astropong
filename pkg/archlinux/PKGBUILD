@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc="Jeu de pong à plusieurs balles."
 arch=('i686' 'x86_64')
 url=https://github.com/lucas8/astropong
-license=('GPL3')
+license=('BSD')
 groups=
 provides=()
 depends=('sfml1.6')
@@ -41,8 +41,10 @@ build() {
 
 	mkdir -p $pkgdir/usr/bin
 	mkdir -p $pkgdir/usr/share/$pkgname/
+	mkdir -p $pkgdir/usr/share/licenses/$pkgname/
 
 	cp astropong $pkgdir/usr/bin/
+	cp COPYING $pkgdir/usr/share/licenses/$pkgname/
 	cd ..
 	cp -r res/* $pkgdir/usr/share/astropong/
 }
