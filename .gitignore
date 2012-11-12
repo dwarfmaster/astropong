@@ -11,3 +11,6 @@ astropong
 *.ogg
 *.wav
 
+# Other
+*.gz
+
