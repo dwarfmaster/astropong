@@ -1,4 +1,7 @@
-aug125 <http://www.siteduzero.com/forum-83-785145-p1-jeu-video-astropong.html>
+Description
+=========================
+Ce programme est un portage du jeu astropong, écrit par Augustin Plichon, alias aug125 : <http://happywebsite.free.fr/happyteam/parties/jeux/pong/>.
+Ce qui suis est la présentation du jeu telle qu'écrite par aug125 à cette adresse : <http://www.siteduzero.com/forum-83-785145-p1-jeu-video-astropong.html>.
 
 Génèse
 =========================
@@ -22,8 +25,4 @@ Objectifs
 ==========================
 
 Le but initial du projet était de découvrir le C++ ainsi que la SFML ; cependant, j'espère arriver à un jeu suffisamment amusant pour qu'un joueur lambda veuille lancer une partie de temps en temps ^^ . J'espère aussi qu'il permettra aux joueurs de visiter le site Web ! 
-
-Portage
-==========================
-Ce jeu est à l'origine développé pour Windows, il a été porté vers linux par Lucas8.
 
