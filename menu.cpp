@@ -369,7 +369,7 @@ void Menu::preparerSprites(RenderWindow &app)
 	m_txtCredit1.SetColor(Color(210,210,150));
 	m_txtCredit1.SetPosition(m_largeur/4, 180);
 
-	m_txtCredit2.SetText("Musiques de Just'in Space : \n- Transit\n- Galaxy\n- Sparkling\n- Zen\n  \n Testeur en chef : lymk \n Testeurs : polkatric, Skyline73, Finkelzohn \n\n N'oubliez pas de visiter le site ! http://happywebsite.free.fr/");
+	m_txtCredit2.SetText("Musiques de Just'in Space : \n- Transit\n- Galaxy\n- Sparkling\n- Zen\n  \n Testeur en chef : lymk \n Testeurs : polkatric, Skyline73, Finkelzohn \n Portage Linux : Lucas8\n\n N'oubliez pas de visiter le site ! http://happywebsite.free.fr/");
 	m_txtCredit2.SetFont(m_font);
 	m_txtCredit2.SetSize(35 * m_largeur/1600);
 	m_txtCredit2.SetColor(Color(210,210,150));
